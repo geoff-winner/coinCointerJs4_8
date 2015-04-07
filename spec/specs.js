@@ -17,6 +17,6 @@ describe('titleCase', function(){
     });
 
     it("it takes odd uppercase placement in multiple words and puts them in title case", function() {
-        expect(titleCase('aNnA Is the qUEEn')).to.equal('Anna Is The Queen');
+        expect(titleCase('aNnA Is The qUEEn')).to.equal('Anna is the Queen');
     });
 });
