@@ -36,7 +36,7 @@ var queenAttack = function(attack, victim) {
 
     //queen [x,y]
     //victim [a,b]
-    if (x === a || y === b || attacksum === victimsum || attacksub === victimsub) {
+    if (x === a || y === b) || (attacksum === victimsum) || (attacksub === victimsub)) {
         return true;
     }   else {
         return false;
@@ -45,15 +45,14 @@ var queenAttack = function(attack, victim) {
 
 $(document).ready(function() {
     $("form#queen-attack").submit(function(event) {
-        var x = parseInt($('input#queen_x').val());
-        var y = parseInt($('input#queen_y').val());
-        var a = parseInt($('input#victim_a').val());
-        var b = parseInt($('input#victim_b').val());
+        var x = parseInt($('input#x').val());
+        var y = parseInt($('input#y').val());
+        var a = parseInt($('input#a').val());
+        var b = parseInt($('input#b').val());
         var result = queenAttack(attack, victim);
 
-        $(".attack").text(attack);
-        $(".victim").text(victim);
-        $(".not").text("");
+
+        $(".not").empty();
         if (!result) {
             $(".not").text("not");
         }
