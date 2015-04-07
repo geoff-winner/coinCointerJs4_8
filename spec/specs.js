@@ -1,29 +1,39 @@
-describe('queenAttack', function() {
-    it("is false if the coordianted are not horizontally, vertically, diagonally in line with each other", function() {
-        expect(queenAttack([1,1], [2,3])).to.equal(false);
-    });
-});
+describe('pigLatin', function(){
 
-describe('queenAttack', function() {
-    it("is true if the coordinates are horizontally or vertically in line with eachother", function() {
-        expect(queenAttack([1,2], [3,2])).to.equal(true);
+    it("it adds 'ay' to the end of a singular letter word start with a vowel", function(){
+        expect(pigLatin('a')).to.equal('aay');
     });
-});
 
-describe('queenAttack', function() {
-    it("is true if the coordinates are diagonally in line with eachother", function() {
-        expect(queenAttack([3,8], [5,6])).to.equal(true);
+    it("it adds 'ay' to the end of e singular letter word start with e vowel", function(){
+        expect(pigLatin('e')).to.equal('eay');
     });
-});
 
-describe('queenAttack', function() {
-    it("is true if the coordinates are diagonally in line with eachother", function() {
-        expect(queenAttack([1,3], [6,8])).to.equal(true);
+    it("it adds 'ay' to the end of 2 characters word start with a vowel", function(){
+        expect(pigLatin('an')).to.equal('anay');
     });
-});
 
-describe('queenAttack', function() {
-    it("is false if the coordinates are not in line in any fashion", function() {
-        expect(queenAttack([1,1], [4,2])).to.equal(false);
+    it("it adds 'ay' to the end of 4 characters word start with a vowel", function(){
+        expect(pigLatin('undo')).to.equal('undoay');
     });
+
+    it("it adds 'ay' to the end of 2 characters word start with a consonant", function(){
+        expect(pigLatin('be')).to.equal('ebay');
+    });
+
+    it("it adds 'ay' to the end of a word start with 2 consonants", function(){
+        expect(pigLatin('play')).to.equal('ayplay');
+    });
+
+    it("it adds 'ay' to the end of a word start with 2 consonants qu", function(){
+            expect(pigLatin('queen')).to.equal('eenquay');
+    });
+
+    it("it adds 'ay' to the end of a word that starts with a y", function() {
+        expect(pigLatin('yellow')).to.equal('ellowyay');
+    });
+
+    it("it adds 'ay' to the end of a word that starts with a y", function() {
+        expect(pigLatin('none')).to.equal('onenay');
+    });
+
 });
