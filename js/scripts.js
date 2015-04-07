@@ -20,3 +20,16 @@ var titleCase = function(words) {
     var final = temp.charAt(0).toUpperCase() + temp.slice(1);
     return final;
 };
+
+$(document).ready(function() {
+    $("form#titlecase").submit(function(event) {
+        var words = $('input#words').val();
+        var result = titleCase(words);
+
+        $(".final").text(result);
+        alert(result);
+
+        $("#result").show();
+        event.preventDefault();
+    });
+});
