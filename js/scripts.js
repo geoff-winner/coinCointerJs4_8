@@ -1,27 +1,3 @@
-// var leapYear = function(year) {
-//     if ((year % 4 === 0) && (year % 100 !== 0) || (year % 400 === 0)) {
-//         return true;
-//     } else {
-//         return false;
-//     }
-// };
-//
-// $(document).ready(function() {
-//     $("form#leap-year").submit(function(event) {
-//         var year = parseInt($("input#year").val());
-//         var result = leapYear(year);
-//
-//         $(".year").text(year);
-//         $(".not").text("");
-//         if (!result) {
-//             $(".not").text("not");
-//         }
-//
-//         $("#result").show();
-//         event.preventDefault();
-//     });
-// });
-
 var queenAttack = function(attack, victim) {
     var x = attack[0];
     var y = attack[1];
@@ -36,7 +12,7 @@ var queenAttack = function(attack, victim) {
 
     //queen [x,y]
     //victim [a,b]
-    if (x === a || y === b) || (attacksum === victimsum) || (attacksub === victimsub)) {
+    if ((x === a || y === b) || (attacksum === victimsum) || (attacksub === victimsub)) {
         return true;
     }   else {
         return false;
@@ -49,6 +25,8 @@ $(document).ready(function() {
         var y = parseInt($('input#y').val());
         var a = parseInt($('input#a').val());
         var b = parseInt($('input#b').val());
+        var attack = [x , y];
+        var victim = [a , b];
         var result = queenAttack(attack, victim);
 
 
