@@ -1,39 +1,22 @@
-describe('pigLatin', function(){
+describe('titleCase', function(){
 
-    it("it adds 'ay' to the end of a singular letter word start with a vowel", function(){
-        expect(pigLatin('a')).to.equal('aay');
+    it("it converts a letter into a capitalize", function(){
+        expect(titleCase('a')).to.equal('A');
     });
 
-    it("it adds 'ay' to the end of e singular letter word start with e vowel", function(){
-        expect(pigLatin('e')).to.equal('eay');
+    it("it converts a word into title case", function(){
+        expect(titleCase('apple')).to.equal('Apple');
     });
 
-    it("it adds 'ay' to the end of 2 characters word start with a vowel", function(){
-        expect(pigLatin('an')).to.equal('anay');
+    it("it converts a two-word string into title case", function(){
+        expect(titleCase('an apple tree')).to.equal('An Apple Tree');
     });
 
-    it("it adds 'ay' to the end of 4 characters word start with a vowel", function(){
-        expect(pigLatin('undo')).to.equal('undoay');
+    it("it takes odd uppercase placement and puts it into title case", function() {
+        expect(titleCase('aNnA')).to.equal('Anna');
     });
 
-    it("it adds 'ay' to the end of 2 characters word start with a consonant", function(){
-        expect(pigLatin('be')).to.equal('ebay');
+    it("it takes odd uppercase placement in multiple words and puts them in title case", function() {
+        expect(titleCase('aNnA Is the qUEEn')).to.equal('Anna Is The Queen');
     });
-
-    it("it adds 'ay' to the end of a word start with 2 consonants", function(){
-        expect(pigLatin('play')).to.equal('ayplay');
-    });
-
-    it("it adds 'ay' to the end of a word start with 2 consonants qu", function(){
-            expect(pigLatin('queen')).to.equal('eenquay');
-    });
-
-    it("it adds 'ay' to the end of a word that starts with a y", function() {
-        expect(pigLatin('yellow')).to.equal('ellowyay');
-    });
-
-    it("it adds 'ay' to the end of a word that starts with a y", function() {
-        expect(pigLatin('none')).to.equal('onenay');
-    });
-
 });
