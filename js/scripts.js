@@ -1,35 +1,47 @@
-var titleCase = function(words) {
-    var word = words.toLowerCase();
-    var split_words = word.split(" ");
-    var exceptions = ["and", "the", "an", "a", "with", "by", "of", "is"];
-    var word_array = [];
+var coinCounter = function(amount, amount2) {
+    var amount = amount;
+    var amount2 = amount2;
+    var quartersTotal = 0;
+    var dimesTotal = 0;
+    var nickelsTotal = 0;
+    var penniesTotal = 0;
+    var quartersTotal2 = 0;
+    var dimesTotal2 = 0;
+    var nickelsTotal2 = 0;
+    var penniesTotal2 = 0;
 
+    while(amount >= 1){
+        quartersTotal = (parseInt(amount / 25));
+        amount -= (quartersTotal * 25);
+        dimesTotal = (parseInt(amount / 10));
+        amount -= (dimesTotal * 10);
 
-    for (var i = 0; i < split_words.length; i++){
-    if ($.inArray(split_words[i], exceptions) !== -1) {
-        word_array.push(split_words[i]);
-    } else {
+        nickelsTotal = (parseInt(amount / 5));
+        amount -= (nickelsTotal * 5);
+        penniesTotal = (parseInt(amount / 1));
+        amount -= (penniesTotal * 1);
 
-    var result = split_words[i].charAt().toUpperCase() + split_words[i].slice(1);
-    word_array.push(result);
-}
-
+        }
+        return penniesTotal;
+        return nickelsTotal;
+        return dimesTotal;
+        return quartersTotal;
     };
 
-    var temp = word_array.join(" ");
-    var final = temp.charAt(0).toUpperCase() + temp.slice(1);
-    return final;
-};
+    while(amount2 >= 1){
+        quartersTotal2 = (parseInt(amount2 / 25));
+        amount2 -= (quartersTotal2 * 25);
+        dimesTotal2 = (parseInt(amount2 / 10));
+        amount2 -= (dimesTotal2 * 10);
 
-$(document).ready(function() {
-    $("form#titlecase").submit(function(event) {
-        var words = $('input#words').val();
-        var result = titleCase(words);
+        nickelsTotal2 = (parseInt(amount2 / 5));
+        amount2 -= (nickelsTotal2 * 5);
+        penniesTotal2 = (parseInt(amount2 / 1));
+        amount2 -= (penniesTotal2 * 1);
 
-        $(".final").text(result);
-        alert(result);
-
-        $("#result").show();
-        event.preventDefault();
-    });
-});
+        }
+        return penniesTotal2;
+        return nickelsTotal2;
+        return dimesTotal2;
+        return quartersTotal2;
+    };
